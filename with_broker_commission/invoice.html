@@ -323,7 +323,8 @@
           <#if item.item == 'RDC: Trust Premium Revenue' && item.custcol_ei1_plan_name == plan && !item.custcol_ei1_cobra_enrollment>
             <#assign planEmpCount += 1>
             <!-- changes -->
-              <#assign totalPlanCost += item.amount + (item.custcol_ei1_broker_commission?has_content?then(item.custcol_ei1_broker_commission?number, 0.00))>
+              <#assign totalPlanCost += item.amount>
+              <!-- <#assign totalPlanCost += item.amount + (item.custcol_ei1_broker_commission?has_content?then(item.custcol_ei1_broker_commission?number, 0.00))> -->
             </#if>
           </#list>
                 <#assign total = total + totalPlanCost>
@@ -355,6 +356,12 @@
 <th class="bill-summary-td blue" style="border-left: none;" colspan="13" align="left">Premium Billed For Coverage Period</th>
 <th class="bill-summary-td blue" colspan="7" align="center">${empcount}</th>
 <th class="bill-summary-td blue" colspan="7" align="right">${record.total}</th>
+</tr>
+
+<tr>
+<th class="bill-summary-td blue" style="border-left: none;" colspan="13" align="left">Total Broker Commission</th>
+<th class="bill-summary-td blue" colspan="7" align="center">&nbsp;</th>
+<th class="bill-summary-td blue" colspan="7" align="right">${record.total?string.currency}</th>
 </tr>
 
 <tr>
@@ -399,7 +406,8 @@
             <#assign coverageRate = item.amount + item.custcol_ei1_broker_commission?matches("^-?\\d+(\\.\\d+)?$")?then(item.custcol_ei1_broker_commission?number, 0)>
               <#elseif item.custcol_ei1_coverage_tier == coverage && item.custcol_ei1_plan_name == plan && item.custcol_ei1_cobra_enrollment>
                 <#assign cobraEmpCount += 1>
-                  <#assign coverageRate = item.amount + (item.custcol_ei1_broker_commission?has_content?then(item.custcol_ei1_broker_commission?number, 0.00))>
+                <#assign coverageRate += item.amount> 
+                  <!-- <#assign coverageRate = item.amount + (item.custcol_ei1_broker_commission?has_content?then(item.custcol_ei1_broker_commission?number, 0.00))> -->
                     </#if>
                     </#list>
                     <#assign totalCoverageCost = coverageEmpCount + cobraEmpCount>
@@ -447,7 +455,8 @@
               <#assign emptotalcost = 0>
                 <#list record.item as item>
                 <#if item.item == 'RDC: Trust Premium Revenue' && !item.custcol_ei1_cobra_enrollment>
-                  <#assign linetotal = item.amount + (item.custcol_ei1_broker_commission?has_content?then(item.custcol_ei1_broker_commission?number, 0.00))>
+                <#assign linetotal += item.amount>
+                  <!-- <#assign linetotal = item.amount + (item.custcol_ei1_broker_commission?has_content?then(item.custcol_ei1_broker_commission?number, 0.00))> -->
                   <#assign emptotalcost += linetotal>
                   <tr style="height: 20px;">
                     <td class="employee-list-td" align="left" style="width: 25%; border-left: none;">${item.custcol_ei1_emp_first_name}</td>
