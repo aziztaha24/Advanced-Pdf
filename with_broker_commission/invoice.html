@@ -1,0 +1,557 @@
+<?xml version="1.0"?><!DOCTYPE pdf PUBLIC "-//big.faceless.org//report" "report-1.1.dtd">
+<pdf>
+<head>
+    <#assign font_montserrat_regular = "https://6922554.app.netsuite.com/core/media/media.nl?id=7051&c=6922554&h=644I3Gb-RRrRwOwEw2OHIK5LY4gDOMTqqW_Ye8Qf7wPc0kVT&_xt=.ttf" />
+  <link type="font" name="MontSerrat" subtype="TrueType" src="${font_montserrat_regular?html}" />
+      <link name="NotoSans" type="font" subtype="truetype" src="${nsfont.NotoSans_Regular}" src-bold="${nsfont.NotoSans_Bold}" src-italic="${nsfont.NotoSans_Italic}" src-bolditalic="${nsfont.NotoSans_BoldItalic}" bytes="2" />
+  <#if .locale == "zh_CN">
+    <link name="NotoSansCJKsc" type="font" subtype="opentype" src="${nsfont.NotoSansCJKsc_Regular}" src-bold="${nsfont.NotoSansCJKsc_Bold}" bytes="2" />
+  <#elseif .locale == "zh_TW">
+    <link name="NotoSansCJKtc" type="font" subtype="opentype" src="${nsfont.NotoSansCJKtc_Regular}" src-bold="${nsfont.NotoSansCJKtc_Bold}" bytes="2" />
+  <#elseif .locale == "ja_JP">
+    <link name="NotoSansCJKjp" type="font" subtype="opentype" src="${nsfont.NotoSansCJKjp_Regular}" src-bold="${nsfont.NotoSansCJKjp_Bold}" bytes="2" />
+  <#elseif .locale == "ko_KR">
+    <link name="NotoSansCJKkr" type="font" subtype="opentype" src="${nsfont.NotoSansCJKkr_Regular}" src-bold="${nsfont.NotoSansCJKkr_Bold}" bytes="2" />
+  <#elseif .locale == "th_TH">
+    <link name="NotoSansThai" type="font" subtype="opentype" src="${nsfont.NotoSansThai_Regular}" src-bold="${nsfont.NotoSansThai_Bold}" bytes="2" />
+  </#if>
+    <macrolist>
+        <macro id="nlfooter1">
+          <table style="margin-top: -100px"><tr>
+<td class="notes-box">
+<p class="notes-heading">NOTES</p>
+<p class="notes-para">PLEASE SUBMIT ALL EMPLOYEE ELIGIBILITY REQUESTS TO <br />YOUR EMPLOYEE NAVIGATOR PORTAL BY THE 15TH OF<br />THE MONTH FOR TIMELY PROCESSING.</p>
+</td>
+<td style="margin-left: 50px;"><@filecabinet nstype="image" src="https://6922554.app.netsuite.com/core/media/media.nl?id=7052&c=6922554&h=vWKjJ5tYfbSjVap0meKSCqaXitjfHLbBhkQhaE2LudQrU9ih" width="100px" height="65px" /></td>
+<td class="notes-box-info" style="margin-top: 0px;">Customer Care Center<br />Monday - Friday 8:00am - 5:00pm (MST) <br /> <p style="margin-top: 7px;">invoices@redirecthealth.com</p></td>
+</tr>
+<tr>
+<td class="blue" style="padding-top: 15px;" colspan="29">Simple and Truly Affordable Healthcare for Everyone <br/>Download the App at www.RedirectHealth.com/App or call us at (888) 407-7928</td>
+</tr></table>
+        </macro>
+    </macrolist>
+    <style type="text/css">* {
+    <#if .locale == "zh_CN">
+      font-family: NotoSans, NotoSansCJKsc, sans-serif;
+    <#elseif .locale == "zh_TW">
+      font-family: NotoSans, NotoSansCJKtc, sans-serif;
+    <#elseif .locale == "ja_JP">
+      font-family: NotoSans, NotoSansCJKjp, sans-serif;
+    <#elseif .locale == "ko_KR">
+      font-family: NotoSans, NotoSansCJKkr, sans-serif;
+    <#elseif .locale == "th_TH">
+      font-family: NotoSans, NotoSansThai, sans-serif;
+    <#else>
+      font-family: MontSerrat, NotoSans, sans-serif;
+    </#if>
+    }
+        .heading {
+            font-weight: 500;
+          color: #54595b;
+            font-size: 9pt;
+            padding: 8px 8px;
+        }
+        hr {
+            width: 100%;
+            color: #d3d3d3;
+            background-color: #d3d3d3;
+            height: 1px;
+        }
+      .header-table-data{
+        font-weight: 700;
+        color: #55606c;
+        font-size: 11px;
+        vertical-align: middle;
+        padding-top:5px;
+        padding-bottom:1px;
+        padding-left:7px;
+        padding-right:7px;
+      }
+      .bill{
+        width:100%;
+        margin-left:74px;
+        margin-top: -5px;
+        font-size: 10.5px;
+        font-weight: 300;
+        color: #55606c;
+        line-height: 15px;
+      }
+      .page-heading{
+        padding-top: 8px;
+        padding-bottom: 6px;
+        width: 100%;
+        height: 20px;
+        margin-bottom:15px;
+        font-size: 18px;
+        color: white;
+        background-color: #1675B9;
+        letter-spacing:1.5px;
+        font-family: MontSerrat, NotoSans, sans-serif;
+        font-weight: 300;
+        letter-spacing: 1.5px;
+      }
+  .division-heading{
+    vertical-align: middle;
+    font-weight: 500;
+    color: #1675B9;
+    font-size: 12px;
+    border-bottom: 1px solid #E5E1DA;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background-color: #fef5dc;
+  }
+      .bill-summary-td{
+        vertical-align: middle;
+        border:1px solid #E5E1DA;
+        border-right: none;
+        border-top: none;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        font-weight: 400;
+        color: #52575a;
+        font-size: 12px;
+      }
+
+      .blue{
+        font-size: 12px;
+        font-weight: 700;
+        color:#1675B9;
+      }
+      .notes-box{
+        border: 2.5px solid #1675B9;
+        corner-radius: 12px;
+        padding-top: 12px;
+        padding-left:8px;
+        padding-right:5px;
+        margin-right: 0px;
+        padding-bottom: 10px;
+        width: 230px; 
+      }
+      .notes-heading{
+        font-size: 11px;
+        font-weight: bolder;
+        color: #55606c;
+        margin: 0;
+        padding: 0;
+      }
+      .notes-para{
+        color: #55606c;
+        font-weight: 800;
+        font-size: 8px;
+        line-height: 200%;
+      }
+      .notes-box-info{
+        font-weight: 400;
+        color: #52575a;
+        font-size: 11.5px;
+        line-height: 150%;
+      }
+      .plan-item-heading{
+        vertical-align: middle;
+        font-weight: 700;
+        color: #55606c;
+        font-size: 10pt;
+        border-top: 2px solid #E5E1DA;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        background-color: #ebeaea;
+      }
+      .attn-table{
+        width:29%;
+        position: absolute;
+      }
+      .attn-table td{
+        line-height: 150%;
+        font-weight: 400;
+        color: #52575a;
+        font-size: 10.5px;
+      }
+      .attn-table th{
+        font-size:11pt;
+        font-weight:500;
+      }
+  .employee-list-heading{
+    vertical-align: middle;
+    font-weight: 500;
+    color: #54595b;
+    padding: 8px 7px;
+    font-size: 12px;
+  }
+  .employee-list-td{
+        vertical-align: middle;
+    height: 20px;
+    padding: 5px;
+        border:1px solid #E5E1DA;
+        border-right: none;
+        border-top: none;
+        font-weight: 400;
+        color: #52575a;
+        font-size: 12px;
+  }
+</style>
+</head>
+<body padding="0.8in" size="Letter" footer="nlfooter1">
+  <#assign cobraCondition = false>
+<#assign divisions = []>
+  <#assign plans = []>
+    <#assign cobraPlans = []>
+      <#assign allPlans = []>
+        <#assign allPlanCodes = []>
+        <#assign allCoverage = ["EE", "ES", "EC", "EF"]>
+<#list record.item?sort_by("custcol_ei1_division_code") as lineItem>
+    <#assign division = lineItem.custcol_ei1_division_code>
+      <#assign plan = lineItem.custcol_ei1_plan_name>
+        <#if plan?has_content && !allPlans?seq_contains(plan)>
+          <#assign allPlans = allPlans + [plan]>
+            <#assign allPlanCodes = allPlanCodes + [lineItem.custcol_ei1_plan_sku]>
+          </#if>
+        <#if plan?has_content && !plans?seq_contains(plan) && !lineItem.custcol_ei1_cobra_enrollment>
+          <#assign plans = plans + [plan]>
+        </#if>
+            <#if plan?has_content && !cobraPlans?seq_contains(plan) && lineItem.custcol_ei1_cobra_enrollment>
+              <#assign cobraCondition = true>
+              <#assign cobraPlans = cobraPlans + [plan]>
+                </#if>
+    <#if division?has_content && !divisions?seq_contains(division) && !lineItem.custcol_ei1_cobra_enrollment>
+        <#assign divisions = divisions + [division]>
+    </#if>
+</#list>
+    <p class="page-heading" align="center">Redirect Health Invoice <#if record.custbody_ei1_inv_type == "Group Estimated Invoice">(Estimated)</#if></p>
+<table class="header" style="width: 100%; height: 125.8px;">
+<tr style="margin-bottom: 10px; height: 125.8px;">
+<td style="height: 125.8px;" align="left"><@filecabinet nstype="image" style="width: 280px; height: 35px;" src="https://6922554.app.netsuite.com/core/media/media.nl?id=7053&c=6922554&h=29Bl12YJU2GdnM30HWvuTzOQCQZqII5zN-JsbLq7ymoxZ_Z2" />
+<p class="bill">2020 N. Central Ave. <br />Suite 400<br />Phoenix, AZ 85004<br /><span style="margin-top: 8px;">Monday - Friday 8:00am - 5:00pm (MST)</span></p>
+<p class="bill" style="margin-top: -15px; color: #1675b9; font-weight: 600;">Email: invoices@redirecthealth.com</p>
+</td>
+<td style="border: 5px solid rgb(22, 117, 185); height: 125.8px; corner-radius: 10px;">
+<table style="width: 100%; margin: 0px 5px 0px 5px;">
+  <tr style="margin-top: 10px; background-color: #fef5dc; height: 10px; corner-radius: 0px;">
+<th class="header-table-data" style="font-weight: 800; font-size: 13px; margin-bottom: 4px;" align="left">INVOICE AMOUNT:</th>
+<th class="header-table-data" style="font-weight: 800; font-size: 13px; margin-bottom: 4px;" align="right">${record.total?string.currency}</th>
+</tr>
+<tr>
+<th class="header-table-data">INVOICE #</th>
+<th class="header-table-data" align="right">${record.custbody_ei1_nav2_inv_num}</th>
+</tr>
+<tr>
+<th class="header-table-data" align="left">INVOICE DATE:</th>
+<th class="header-table-data" align="right">${record.trandate}</th>
+</tr>
+<#if record.custbody_ei1_group_id != "">
+<tr>
+<th class="header-table-data" align="left">GROUP ID:</th>
+<th class="header-table-data" align="right">${record.custbody_ei1_group_id}</th>
+</tr>
+</#if>
+<#assign inputDate = record.trandate>
+<#assign year = inputDate?string("yyyy")>
+<#assign month = inputDate?string("MM")>
+  
+<#assign startDate = month + "/01/" + year>
+<#assign endDate = "">
+<#if month == "01" || month == "03" || month == "05" || month == "07" || month == "08" || month == "10" || month == "12">
+  <#assign endDate = month + "/31/" + year>
+<#elseif month == "04" || month == "06" || month == "09" || month == "11">
+  <#assign endDate = month + "/30/" + year>
+<#else>
+  <#-- Handle February for leap years -->
+  <#if (year?number % 4 == 0 && year?number % 100 != 0) || (year?number % 400 == 0)>
+    <#assign endDate = month + "/29/" + year>
+  <#else>
+    <#assign endDate = month + "/28/" + year>
+  </#if>
+</#if>
+<tr>
+  <th align="left" class="header-table-data">COVERAGE PERIOD:</th>
+  <th align="right" class="header-table-data">${startDate} - ${endDate}</th>
+</tr>
+      </table>
+</td>
+</tr>
+</table>
+<div style="width: 100%; height: 85px; position: relative;">
+<table class="attn-table" style="width: 33.33%;">
+  <tr>
+<td style="text-decoration: none;">
+  <strong>Attn</strong><br />
+  <#if record.custbody_ei1_first_name?has_content && !record.custbody_ei1_inv_cont_lastname?has_content>
+    ${record.custbody_ei1_first_name} <br />
+    <#elseif record.custbody_ei1_first_name?has_content && record.custbody_ei1_inv_cont_lastname?has_content>
+      ${record.custbody_ei1_first_name} ${record.custbody_ei1_inv_cont_lastname}<br />
+    </#if>
+    <#if record.custbody_ei1_comp_name?has_content>${record.custbody_ei1_comp_name}<br /></#if>
+      <#if record.custbody_ei1_contact_phone?has_content>${record.custbody_ei1_contact_phone} <br /></#if>
+      <#if record.custbody_ei1_contact_email?has_content>${record.custbody_ei1_contact_email}</#if>
+    </td>
+</tr>
+</table>
+<table class="attn-table" style="width: 33.33%; left: 36.33%;"><tr>
+<td><strong>Company</strong><br />
+  <#if record.custbody_ei1_comp_name?has_content>${record.custbody_ei1_comp_name}<br /></#if>
+  <#if record.billaddr1?has_content>${record.billaddr1}<br /></#if>
+    <#if record.billcity?has_content && record.billstate?has_content && record.billzip?has_content>${record.billcity} ${record.billstate} ${record.billzip}</#if>
+</td>
+</tr></table>
+       
+<table class="attn-table" style="width: 30%; left: 71%;">
+  <tr>
+    <td style="text-decoration: none;">
+      <strong>Broker</strong> <br />
+      <#if record.custbody_broker_name?has_content>${record.custbody_broker_name}<br /></#if>
+          <#if record.custbody_ei1_broker_address_1?has_content>${record.custbody_ei1_broker_address_1}<br />${record.custbody_ei1_broker_city} ${record.custbody_ei1_broker_state} ${record.custbody_ei1_broker_zip}</#if>
+    </td>
+</tr>
+</table>
+</div>
+<p style= "line-height: 120%; font-weight: 400; font-size: 12px; color: #52575a;"><br />Thank you for choosing Redirect Health to manage your company's health plan. Below is your billing summary:</p>
+<#assign total = 0> 
+  <#assign empcount = 0>
+<table class="itemtable" style="width: 100%;">
+<thead>
+<tr style="background-color: #daecf6;">
+<th class="heading" colspan="13" align="left">DESCRIPTION</th>
+<th class="heading" colspan="7" align="center">EMPLOYEE COUNT</th>
+<th class="heading" colspan="7" align="center">TOTAL COST</th>
+</tr>
+</thead>
+  <#assign brokerCommission = 0>
+  <#list plans as plan>
+    <#assign planEmpCount = 0>
+      <#assign totalPlanCost = 0>
+        <#list record.item as item>
+          
+          <#if item.item == 'RDC: Trust Premium Revenue' && item.custcol_ei1_plan_name == plan && !item.custcol_ei1_cobra_enrollment>
+            <#assign planEmpCount += 1>
+            <!-- changes -->
+              <#assign totalPlanCost += item.amount + (item.custcol_ei1_broker_commission?has_content?then(item.custcol_ei1_broker_commission?number, 0.00))>
+            </#if>
+          </#list>
+                <#assign total = total + totalPlanCost>
+                <#assign empcount = empcount + planEmpCount>
+                <tr>
+                  <td class="bill-summary-td" style="border-left: none; padding-left: 1px;" colspan="13" align="left">${plan}</td>
+                  <td class="bill-summary-td" colspan="7" align="center">${planEmpCount}</td>
+                  <td class="bill-summary-td" colspan="7" align="right">${totalPlanCost?number?string.currency}</td>
+                  </tr>
+    </#list>
+            <#list cobraPlans as cobraPlan>
+              <#assign cobraPlanEmpCount = 0>
+                <#assign cobraPlanTotalCost = 0>
+                  <#list record.item as item>
+                    <#if item.item == 'RDC: Trust Premium Revenue' && item.custcol_ei1_plan_name == cobraPlan && item.custcol_ei1_cobra_enrollment>
+                      <#assign cobraPlanEmpCount = cobraPlanEmpCount + 1>
+                        <#assign cobraPlanTotalCost = cobraPlanTotalCost + item.amount + (item.custcol_ei1_broker_commission?has_content?then(item.custcol_ei1_broker_commission?number, 0.00))>
+                      </#if>
+                    </#list>
+                              <#assign empcount = empcount + cobraPlanEmpCount>
+                                <#assign total = total + cobraPlanTotalCost>
+                          <tr>
+                            <td class="bill-summary-td" style="border-left: none; padding-left: 1px;" colspan="13" align="left">${cobraPlan} (COBRA)</td>
+                            <td class="bill-summary-td" colspan="7" align="center">${cobraPlanEmpCount}</td>
+                            <td class="bill-summary-td" colspan="7" align="right">${cobraPlanTotalCost?number?string.currency}</td>
+                  </tr>
+                              </#list>
+              <tr>
+<th class="bill-summary-td blue" style="border-left: none;" colspan="13" align="left">Premium Billed For Coverage Period</th>
+<th class="bill-summary-td blue" colspan="7" align="center">${empcount}</th>
+<th class="bill-summary-td blue" colspan="7" align="right">${record.total}</th>
+</tr>
+
+<tr>
+<th class="bill-summary-td blue" style="border-left: none;" colspan="13" align="left">Total Amount Due</th>
+<th class="bill-summary-td" colspan="7" align="center">&nbsp;</th>
+<th class="bill-summary-td blue" colspan="7" align="right">${record.total?string.currency}</th>
+</tr></table>
+  <pbr footer="nlfooter" />
+<h1 class="page-heading" align="center">COVERAGE AND COSTS</h1>
+<table class="itemtable" style="width: 100%;">
+      <tr style="background-color: #daecf6; width: 100%;">
+        <th class="heading" colspan="8"  align="left">DESCRIPTION</th>
+        <th class="heading" colspan="7" align= "center">EMPLOYEE COUNT</th>
+        <th class="heading" colspan="7" align="center" >COBRA EMPLOYEES</th>
+        <th class="heading" colspan="7" align="center" >RATE</th>
+        <th class="heading" colspan="7" align="right">TOTAL COST</th>
+        </tr>
+  <#list allPlans as plan>
+    <tr class="plan-item-heading">
+      <th style="padding-left: 10px;" colspan="29">${plan} (${allPlanCodes[plan?index]})</th>
+      </tr>
+    <#assign totalPlanEmpCount = 0>
+      <#assign totalPlanCobraEmpCount = 0>
+        <#assign totalPlanCost = 0>
+    <#list allCoverage as coverage>
+      <#assign coverageTier = "">
+        <#if coverage == "EE">
+          <#assign coverageTier = "Primary Member">
+            <#elseif coverage == "EC">
+              <#assign coverageTier = "Primary + Child(ren)">
+                <#elseif coverage == "EF">
+                  <#assign coverageTier = "Primary + Family">
+                    <#elseif coverage == "ES">
+                      <#assign coverageTier = "Primary + Spouse">
+                        </#if>
+      <#assign coverageEmpCount = 0>
+        <#assign cobraEmpCount = 0>
+          <#assign coverageRate = 0>
+      <#list record.item as item>
+        <#if item.item == 'RDC: Trust Premium Revenue' && item.custcol_ei1_coverage_tier == coverage && item.custcol_ei1_plan_name == plan && !item.custcol_ei1_cobra_enrollment>
+          <#assign coverageEmpCount += 1>
+            <#assign coverageRate = item.amount + item.custcol_ei1_broker_commission?matches("^-?\\d+(\\.\\d+)?$")?then(item.custcol_ei1_broker_commission?number, 0)>
+              <#elseif item.custcol_ei1_coverage_tier == coverage && item.custcol_ei1_plan_name == plan && item.custcol_ei1_cobra_enrollment>
+                <#assign cobraEmpCount += 1>
+                  <#assign coverageRate = item.amount + (item.custcol_ei1_broker_commission?has_content?then(item.custcol_ei1_broker_commission?number, 0.00))>
+                    </#if>
+                    </#list>
+                    <#assign totalCoverageCost = coverageEmpCount + cobraEmpCount>
+                      <#assign totalCoverageCost = totalCoverageCost * coverageRate>
+                    <#if coverageEmpCount != 0 !! cobraEmpCount != 0>
+                      <tr>
+                        <td class="bill-summary-td" style="border-left: none;" colspan="8" align="left">${coverageTier} (${coverage})</td>
+                        <td class="bill-summary-td" colspan="7" align="center">${coverageEmpCount}</td>
+                        <td class="bill-summary-td" colspan="7" align="center">${cobraEmpCount}</td>
+                        <td class="bill-summary-td" colspan="7" align="right">${coverageRate?string.currency}</td>
+                        <td class="bill-summary-td" colspan="7" align="right">${totalCoverageCost?string.currency}</td>
+                        </tr>
+                      </#if>
+                      <#assign totalPlanEmpCount = totalPlanEmpCount + coverageEmpCount>
+                        <#assign totalPlanCobraEmpCount = totalPlanCobraEmpCount + cobraEmpCount>
+                          <#assign totalPlanCost = totalPlanCost + totalCoverageCost>
+                    </#list>
+                      <tr>
+                        <th class="bill-summary-td blue" style="border-left: none; color: #1675b9; padding-left: 4px; margin-bottom: 8px;" colspan="8" align="left">Subtotal</th>
+                        <th class="bill-summary-td blue" style="color: #1675b9; margin-bottom: 8px;" colspan="7" align="center">${totalPlanEmpCount}</th>
+                        <th class="bill-summary-td blue" style="color: #1675b9; margin-bottom: 8px;" colspan="7" align="center">${totalPlanCobraEmpCount}</th>
+                        <th class="bill-summary-td" style="margin-bottom: 8px;" colspan="7">&nbsp;</th>
+                        <th class="bill-summary-td blue" style="color: #1675b9; margin-bottom: 8px;" colspan="7" align="right">${totalPlanCost?string.currency}</th>
+                        </tr>
+                    </#list>
+</table>
+  <pbr footer="nlfooter" />
+<br />
+<h1 class="page-heading" align="center">CURRENT EMPLOYEE ROSTER</h1>
+<table style="width: 100%;">
+  <thead style="width: 100%;">
+    <tr style="background-color: #daecf6;">
+      <th class="employee-list-heading" align="left" style="width: 25%;">FIRST NAME</th>
+      <th class="employee-list-heading" align="left" style="width: 25%;">LAST NAME</th>
+      <th class="employee-list-heading" align="center" style="width: 20%;">COVERAGE TIER</th>
+      <th class="employee-list-heading" align="center" style="width: 15%;">PLAN CODE</th>
+      <th class="employee-list-heading" align="center" style="width: 15%;">TOTAL COST</th>
+    </tr>
+  </thead>
+  <tbody>
+      <#if divisions?size == 0>
+    <tr class="division-heading" style="border-top: 1px solid #E5E1DA;">
+                  <td style="padding-left: 10px; " colspan="29"></td>
+                  </tr>
+              <#assign emptotalcost = 0>
+                <#list record.item as item>
+                <#if item.item == 'RDC: Trust Premium Revenue' && !item.custcol_ei1_cobra_enrollment>
+                  <#assign linetotal = item.amount + (item.custcol_ei1_broker_commission?has_content?then(item.custcol_ei1_broker_commission?number, 0.00))>
+                  <#assign emptotalcost += linetotal>
+                  <tr style="height: 20px;">
+                    <td class="employee-list-td" align="left" style="width: 25%; border-left: none;">${item.custcol_ei1_emp_first_name}</td>
+                    <td class="employee-list-td" align="left" style="width: 25%;">${item.custcol_ei1_emp_last_name}</td>
+                    <td class="employee-list-td" align="center" style="width: 20%;">${item.custcol_ei1_coverage_tier}</td>
+                    <td class="employee-list-td" align="center" style="width: 15%;">${item.custcol_ei1_plan_sku}</td>
+                    <td class="employee-list-td" align="right" style="width: 15%;">${linetotal?string.currency}</td>
+                    </tr>
+                </#if>
+                </#list>
+                  <tr style="border-bottom: 1px solid #E5E1DA;">
+                  <td colspan="3">&nbsp;</td>
+                  <td class="employee-list-heading" colspan="1" align="right">Total:</td>
+                  <td class="employee-list-heading" colspan="1" align="right">${emptotalcost?string.currency}</td>
+                  </tr>
+        <#elseif divisions?size != 0>
+          <#assign emptotalcost = 0>
+            <#assign condition = 0>
+            <#list record.item as item>
+              <#if item.item == 'RDC: Trust Premium Revenue' && !item.custcol_ei1_division_code?has_content && !item.custcol_ei1_cobra_enrollment>
+                <#if condition == 0>
+                <tr class="division-heading" style="border-top: 1px solid #E5E1DA;">
+                  <td style="padding-left: 10px; " colspan="29"></td>
+                  </tr>
+                <#assign condition = 1>
+              </#if>
+                  <#assign linetotal = item.amount + (item.custcol_ei1_broker_commission?has_content?then(item.custcol_ei1_broker_commission?number, 0.00))>
+                  <#assign emptotalcost += linetotal>
+                <tr style="height: 20px;">
+                    <td class="employee-list-td" align="left" style="width: 25%; border-left: none;">${item.custcol_ei1_emp_first_name}</td>
+                    <td class="employee-list-td" align="left" style="width: 25%;">${item.custcol_ei1_emp_last_name}</td>
+                    <td class="employee-list-td" align="center" style="width: 20%;">${item.custcol_ei1_coverage_tier}</td>
+                    <td class="employee-list-td" align="center" style="width: 15%;">${item.custcol_ei1_plan_sku}</td>
+                    <td class="employee-list-td" align="right" style="width: 15%;">${linetotal?string.currency}</td>
+                    </tr>
+              </#if>
+            </#list>
+                    <#if condition == 1>
+                    <tr style="border-bottom: 1px solid #E5E1DA;">
+                  <td colspan="3">&nbsp;</td>
+                  <td class="employee-list-heading" colspan="1" align="right">Total:</td>
+                  <td class="employee-list-heading" colspan="1" align="right">${emptotalcost?string.currency}</td>
+                  </tr>
+                      </#if>
+          <#list divisions as division>
+            <#assign emptotalcost = 0>
+            <#if division_index == 0>
+              <#if condition == 1>
+                <tr class="division-heading">
+                  <#else>
+                <tr class="division-heading" style="border-top: 1px solid #E5E1DA;">    
+              </#if>
+                  <td style="padding-left: 10px; " colspan="29">Division: ${division}</td>
+                  </tr>
+              <#else>
+                <tr class="division-heading">
+                  <td style="padding-left: 10px;" colspan="29">Division: ${division}</td>
+                  </tr>
+              </#if>
+            <#list record.item as item>
+              <#if item.item == 'RDC: Trust Premium Revenue' && item.custcol_ei1_division_code == division && !item.custcol_ei1_cobra_enrollment>
+                  <#assign linetotal = item.amount + (item.custcol_ei1_broker_commission?has_content?then(item.custcol_ei1_broker_commission?number, 0.00))>
+                  <#assign emptotalcost += linetotal>
+                <tr style="height: 20px;">
+                    <td class="employee-list-td" align="left" style="width: 25%; border-left: none;">${item.custcol_ei1_emp_first_name}</td>
+                    <td class="employee-list-td" align="left" style="width: 25%;">${item.custcol_ei1_emp_last_name}</td>
+                    <td class="employee-list-td" align="center" style="width: 20%;">${item.custcol_ei1_coverage_tier}</td>
+                    <td class="employee-list-td" align="center" style="width: 15%;">${item.custcol_ei1_plan_sku}</td>
+                    <td class="employee-list-td" align="right" style="width: 15%;">${linetotal?string.currency}</td>
+                    </tr>
+                </#if>
+            </#list>
+                <tr style="border-bottom: 1px solid #E5E1DA;">
+                  <td colspan="3">&nbsp;</td>
+                  <td class="employee-list-heading" colspan="1" align="right">Total:</td>
+                  <td class="employee-list-heading" colspan="1" align="right">${emptotalcost?string.currency}</td>
+                  </tr>
+            </#list>
+        </#if>
+                <#if cobraCondition>
+                <#assign emptotalcost = 0>
+                  <tr class="division-heading">
+                  <td style="padding-left: 10px;" colspan="29">COBRA</td>
+                  </tr>
+                  <#list record.item as item>
+                    <#if item.item == 'RDC: Trust Premium Revenue' && item.custcol_ei1_cobra_enrollment>
+                      <#assign linetotal = item.amount + (item.custcol_ei1_broker_commission?has_content?then(item.custcol_ei1_broker_commission?number, 0.00))>
+                        <#assign emptotalcost += linetotal>
+                          <tr style="height: 20px;">
+                          <td class="employee-list-td" align="left" style="width: 25%; border-left: none;">${item.custcol_ei1_emp_first_name}</td>
+                          <td class="employee-list-td" align="left" style="width: 25%;">${item.custcol_ei1_emp_last_name}</td>
+                          <td class="employee-list-td" align="center" style="width: 20%;">${item.custcol_ei1_coverage_tier}</td>
+                          <td class="employee-list-td" align="center" style="width: 15%;">${item.custcol_ei1_plan_sku}</td>
+                          <td class="employee-list-td" align="right" style="width: 15%;">${linetotal?string.currency}</td>
+                          </tr>
+                      </#if>
+                      </#list>
+                      <tr style="border-bottom: 1px solid #E5E1DA;">
+                        <td colspan="3">&nbsp;</td>
+                        <td class="employee-list-heading" colspan="1" align="right">Total:</td>
+                        <td class="employee-list-heading" colspan="1" align="right">${emptotalcost?string.currency}</td>
+                         </tr>
+                  </#if>
+                      </tbody>
+                      </table>
+                      </body>
+                      </pdf>
