@@ -457,7 +457,7 @@
                 <#if item.item == 'RDC: Trust Premium Revenue' && !item.custcol_ei1_cobra_enrollment>
                 <#assign linetotal += item.amount>
                   <!-- <#assign linetotal = item.amount + (item.custcol_ei1_broker_commission?has_content?then(item.custcol_ei1_broker_commission?number, 0.00))> -->
-                  <#assign emptotalcost += linetotal>
+                  <#assign linetotal += item.amount>
                   <tr style="height: 20px;">
                     <td class="employee-list-td" align="left" style="width: 25%; border-left: none;">${item.custcol_ei1_emp_first_name}</td>
                     <td class="employee-list-td" align="left" style="width: 25%;">${item.custcol_ei1_emp_last_name}</td>
