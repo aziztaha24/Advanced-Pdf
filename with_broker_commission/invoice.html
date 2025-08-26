@@ -346,6 +346,7 @@
                     </#list>
                               <#assign empcount = empcount + cobraPlanEmpCount>
                                 <#assign total = total + cobraPlanTotalCost>
+                                
                           <tr>
                             <td class="bill-summary-td" style="border-left: none; padding-left: 1px;" colspan="13" align="left">${cobraPlan} (COBRA)</td>
                             <td class="bill-summary-td" colspan="7" align="center">${cobraPlanEmpCount}</td>
@@ -360,14 +361,14 @@
 
 <tr>
 <th class="bill-summary-td blue" style="border-left: none;" colspan="13" align="left">Total Broker Commission</th>
-<th class="bill-summary-td blue" colspan="7" align="center">&nbsp;</th>
-<th class="bill-summary-td blue" colspan="7" align="right">${record.total?string.currency}</th>
+<th class="bill-summary-td" colspan="7" align="center">&nbsp;</th>
+<th class="bill-summary-td blue" colspan="7" align="right">$${record.custbody_broker_commission}</th>
 </tr>
 
 <tr>
 <th class="bill-summary-td blue" style="border-left: none;" colspan="13" align="left">Total Amount Due</th>
 <th class="bill-summary-td" colspan="7" align="center">&nbsp;</th>
-<th class="bill-summary-td blue" colspan="7" align="right">${record.total?string.currency}</th>
+<th class="bill-summary-td blue" colspan="7" align="right">${record.total}</th>
 </tr></table>
   <pbr footer="nlfooter" />
 <h1 class="page-heading" align="center">COVERAGE AND COSTS</h1>
@@ -455,9 +456,9 @@
               <#assign emptotalcost = 0>
                 <#list record.item as item>
                 <#if item.item == 'RDC: Trust Premium Revenue' && !item.custcol_ei1_cobra_enrollment>
-                <#assign linetotal += item.amount>
-                  <!-- <#assign linetotal = item.amount + (item.custcol_ei1_broker_commission?has_content?then(item.custcol_ei1_broker_commission?number, 0.00))> -->
-                  <#assign linetotal += item.amount>
+                <!-- + (item.custcol_ei1_broker_commission?has_content?then(item.custcol_ei1_broker_commission?number, 0.00)) -->
+                  <#assign linetotal = item.amount >
+                  <#assign emptotalcost += linetotal>
                   <tr style="height: 20px;">
                     <td class="employee-list-td" align="left" style="width: 25%; border-left: none;">${item.custcol_ei1_emp_first_name}</td>
                     <td class="employee-list-td" align="left" style="width: 25%;">${item.custcol_ei1_emp_last_name}</td>
@@ -483,7 +484,8 @@
                   </tr>
                 <#assign condition = 1>
               </#if>
-                  <#assign linetotal = item.amount + (item.custcol_ei1_broker_commission?has_content?then(item.custcol_ei1_broker_commission?number, 0.00))>
+              <!-- + (item.custcol_ei1_broker_commission?has_content?then(item.custcol_ei1_broker_commission?number, 0.00)) -->
+                  <#assign linetotal = item.amount >
                   <#assign emptotalcost += linetotal>
                 <tr style="height: 20px;">
                     <td class="employee-list-td" align="left" style="width: 25%; border-left: none;">${item.custcol_ei1_emp_first_name}</td>
@@ -518,7 +520,8 @@
               </#if>
             <#list record.item as item>
               <#if item.item == 'RDC: Trust Premium Revenue' && item.custcol_ei1_division_code == division && !item.custcol_ei1_cobra_enrollment>
-                  <#assign linetotal = item.amount + (item.custcol_ei1_broker_commission?has_content?then(item.custcol_ei1_broker_commission?number, 0.00))>
+                  <!-- + (item.custcol_ei1_broker_commission?has_content?then(item.custcol_ei1_broker_commission?number, 0.00)) -->
+                  <#assign linetotal = item.amount >
                   <#assign emptotalcost += linetotal>
                 <tr style="height: 20px;">
                     <td class="employee-list-td" align="left" style="width: 25%; border-left: none;">${item.custcol_ei1_emp_first_name}</td>
