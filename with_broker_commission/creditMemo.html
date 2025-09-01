@@ -273,7 +273,9 @@
     </tr>
          </thead>
        </#if>
-    <#if item.item == 'RDC: Trust Premium Revenue'><#assign total += item.amount + item.custcol_ei1_broker_commission?matches("^-?\\d+(\\.\\d+)?$")?then(item.custcol_ei1_broker_commission?number, 0)><#assign empcount =empcount+1>
+    <#if item.item == 'RDC: Trust Premium Revenue'>
+    <#assign total += item.amount>
+    <#assign empcount =empcount+1>
     </#if>
     </#list>
     <tr>
@@ -291,7 +293,15 @@
 <tr>
 <th class="bill-summary-td blue" style="border-left:none; padding-left:8px;" colspan="13" align="left">Total Broker Commission</th>
 <th class="bill-summary-td blue" colspan="7" align="center">&nbsp;</th>
-<th class="bill-summary-td blue" colspan="7" align="right">(${brokerCommission})</th>
+<th class="bill-summary-td blue" colspan="7" align="right"><#if brokerCommission?matches("^[0-9.]+$")>
+        $${brokerCommission?number?string("0.00")}
+    <#else>
+        ${brokerCommission}
+    </#if>
+
+
+
+</th>
 </tr>
 </#if>
     <tr>
